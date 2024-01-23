@@ -18,15 +18,34 @@ export const links: LinksFunction = () => [
 
 export default function App() {
   return (
-    <html lang="en">
+    <html lang="en" className="dark font-sans antialiased">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
       </head>
-      <body>
-        <Outlet />
+      <body className=" dark:bg-black dark:text-white">
+        <header className="flex py-4">
+          <div className="flex-auto px-4">
+            <h1 className="text-2xl font-bold leading-5 tracking-widest">
+              MINA MIKHAIL
+            </h1>
+          </div>
+          <div className="flex-auto px-4">
+            <nav>
+              <ul className="flex justify-end">
+                <li className="relative block px-2">About</li>
+                <li className="relative block px-2">Projects</li>
+                <li className="relative block px-2">Blog</li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <main>
+          <Outlet />
+        </main>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
