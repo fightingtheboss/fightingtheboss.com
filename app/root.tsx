@@ -27,13 +27,13 @@ export default function App() {
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
       </head>
       <body className=" dark:bg-black dark:text-white">
-        <header className="flex py-4">
-          <div className="flex-auto px-4">
+        <header className="flex px-2 py-4 sm:px-4">
+          <div className="flex-auto px-2 sm:px-4">
             <h1 className="text-2xl font-bold leading-5 tracking-widest">
               MINA MIKHAIL
             </h1>
           </div>
-          <div className="flex-auto px-4">
+          <div className="flex-auto px-2 sm:px-4">
             <nav>
               <ul className="flex justify-end">
                 <li className="relative block px-2">About</li>
