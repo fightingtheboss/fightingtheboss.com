@@ -1,9 +1,9 @@
-import { readFile, readdir } from 'fs/promises';
-import { resolve } from 'path';
+import { readFile, readdir } from "fs/promises";
+import { resolve } from "path";
 
-import { bundleMDX } from 'mdx-bundler';
+import { bundleMDX } from "mdx-bundler";
 
-export type ContentType = 'work' | 'projects' | 'posts' | '*';
+export type ContentType = "work" | "projects" | "posts" | "*";
 
 /**
  * Get all the slugs for a given content type
@@ -11,12 +11,12 @@ export type ContentType = 'work' | 'projects' | 'posts' | '*';
  */
 export async function getSlugs(contentType: ContentType) {
   const path =
-    contentType === '*'
-      ? resolve(process.cwd(), 'app', 'content')
-      : resolve(process.cwd(), 'app', 'content', contentType);
+    contentType === "*"
+      ? resolve(process.cwd(), "app", "content")
+      : resolve(process.cwd(), "app", "content", contentType);
 
-  const files = await readdir(path, { recursive: contentType === '*' });
-  return files.map((file) => file.replace(/\.mdx/, ''));
+  const files = await readdir(path, { recursive: contentType === "*" });
+  return files.map((file) => file.replace(/\.mdx/, ""));
 }
 
 /**
@@ -44,16 +44,16 @@ export async function getContentListing(contentType: ContentType) {
  */
 export async function getContent(contentType: ContentType, slug: string) {
   const source = await readFile(
-    resolve(process.cwd(), 'app', 'content', contentType, `${slug}.mdx`),
-    'utf8'
+    resolve(process.cwd(), "app", "content", contentType, `${slug}.mdx`),
+    "utf8"
   );
 
   const [rehypeAutolinkHeadings, rehypeHighlight, rehypeSlug, remarkGfm] =
     await Promise.all([
-      import('rehype-autolink-headings').then((mod) => mod.default),
-      import('rehype-highlight').then((mod) => mod.default),
-      import('rehype-slug').then((mod) => mod.default),
-      import('remark-gfm').then((mod) => mod.default),
+      import("rehype-autolink-headings").then((mod) => mod.default),
+      import("rehype-highlight").then((mod) => mod.default),
+      import("rehype-slug").then((mod) => mod.default),
+      import("remark-gfm").then((mod) => mod.default),
     ]);
 
   const { code, frontmatter } = await bundleMDX({
