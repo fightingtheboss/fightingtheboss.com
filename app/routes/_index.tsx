@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import { Link } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -30,21 +31,27 @@ export default function Index() {
         <h2 className="py-4 md:w-40 md:flex-none">Work</h2>
         <ul className="text-3xl sm:text-5xl md:text-8xl">
           <li className="py-2">
-            <h3 className="font-bold uppercase leading-none">Shopify</h3>
+            <h3 className="font-bold uppercase leading-none">
+              <Link to={"/work/shopify"}>Shopify</Link>
+            </h3>
             <h4 className="text-xs md:text-sm">2018 &ndash; 2023</h4>
           </li>
           <li className="py-2">
             <h3 className="font-bold uppercase leading-none">
-              General Assembly
+              <Link to={"/work/general-assembly"}>General Assembly</Link>
             </h3>
             <h4 className="text-xs md:text-sm">2013 &ndash; 2018</h4>
           </li>
           <li className="py-2">
-            <h3 className="font-bold uppercase leading-none">MUBI</h3>
+            <h3 className="font-bold uppercase leading-none">
+              <Link to={"/work/mubi"}>MUBI</Link>
+            </h3>
             <h4 className="text-xs md:text-sm">2009 &ndash; 2012</h4>
           </li>
           <li className="py-2">
-            <h3 className="font-bold uppercase leading-none">TIFFR</h3>
+            <h3 className="font-bold uppercase leading-none">
+              <Link to={"/work/tiffr"}>TIFFR</Link>
+            </h3>
             <h4 className="text-xs md:text-sm">2009 &ndash; present</h4>
           </li>
         </ul>
