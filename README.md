@@ -27,4 +27,5 @@ consistently in VS Code with Docker installed and the VS Code devcontainers exte
 1. Open VS Code
 2. Install the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) if not already installed
 3. Run the `Dev Containers: Open Folder in container...` command (from the command palette: `Cmd+Shift+P`)
+4. If needed, run `NODE_ENV=development npm install` (The container runs in production mode by default because the Dockerfile is used for deployment)
 4. Visit `http://localhost:3000`
