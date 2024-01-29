@@ -1,38 +1,30 @@
-# Welcome to Remix!
+# fightingtheboss.com
 
-- [Remix Docs](https://remix.run/docs)
+This is a Remix app. Most of the content is written in MDX.
 
-## Development
+## TODO
+- Figure out how to add images to posts (and style them!)
+- Figure out how to add other embeds to posts (like a code sandbox or other imports)
+- Actually write the content for each page
+  - Likely build a basic image gallery component for projects
+- Add custom default styles for @tailwindcss/typography for MDX files
+- Dark mode toggle (or just switch it back to the default detection mode)
+- Once satisfied, point the domain at it
+- Could also investigate caching the posts in sqlite/litefs, using prisma as ORM
 
-From your terminal:
+## Running locally
 
-```sh
-npm run dev
-```
+1. Ensure you have Node 18+ installed
+2. Clone the repo
+3. Run `npm run dev`
+4. Open up http://localhost:3000
 
-This starts your app in development mode, rebuilding assets on file changes.
+## Development containers (https://containers.dev/)
 
-## Deployment
+This repo has a devcontainer configuration. This means you should be able to run this app
+consistently in VS Code with Docker installed and the VS Code devcontainers extension installed
 
-First, build your app for production:
-
-```sh
-npm run build
-```
-
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/`
-- `public/build/`
+1. Open VS Code
+2. Install the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) if not already installed
+3. Run the `Dev Containers: Open Folder in container...` command (from the command palette: `Cmd+Shift+P`)
+4. Visit `http://localhost:3000`
