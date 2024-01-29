@@ -65,7 +65,7 @@ export default function Index() {
           </li>
           <li className="py-1 md:py-2">
             <h3 className="font-bold uppercase leading-none">
-              I&apos;m So Close
+              <Link to={"/projects/im-so-close"}>I&apos;m So Close</Link>
             </h3>
           </li>
           <li className="py-1 md:py-2">
