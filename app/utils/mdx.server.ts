@@ -48,25 +48,61 @@ export async function getContent(contentType: ContentType, slug: string) {
     "utf8"
   );
 
-  const [rehypeAutolinkHeadings, rehypeHighlight, rehypeSlug, remarkGfm] =
-    await Promise.all([
-      import("rehype-autolink-headings").then((mod) => mod.default),
-      import("rehype-highlight").then((mod) => mod.default),
-      import("rehype-slug").then((mod) => mod.default),
-      import("remark-gfm").then((mod) => mod.default),
-    ]);
+  const [
+    rehypeAutolinkHeadings,
+    rehypeHighlight,
+    rehypeSlug,
+    remarkGfm,
+    remarkMdxImages,
+  ] = await Promise.all([
+    import("rehype-autolink-headings").then((mod) => mod.default),
+    import("rehype-highlight").then((mod) => mod.default),
+    import("rehype-slug").then((mod) => mod.default),
+    import("remark-gfm").then((mod) => mod.default),
+    import("remark-mdx-images").then((mod) => mod.default),
+  ]);
+
+  const ImageGalleryFile = await readFile(
+    resolve(
+      process.cwd(),
+      "app",
+      "components",
+      "ImageGallery",
+      "ImageGallery.tsx"
+    ),
+    "utf8"
+  );
 
   const { code, frontmatter } = await bundleMDX({
     source,
     cwd: process.cwd(),
+    files: {
+      "../../components/ImageGallery/ImageGallery.tsx": ImageGalleryFile,
+    },
     mdxOptions: (options) => {
-      options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkGfm];
+      options.remarkPlugins = [
+        ...(options.remarkPlugins ?? []),
+        remarkGfm,
+        remarkMdxImages,
+      ];
       options.rehypePlugins = [
         ...(options.rehypePlugins ?? []),
         rehypeSlug,
         rehypeAutolinkHeadings,
         rehypeHighlight,
       ];
+      return options;
+    },
+    // These seem to override images referenced by URL, so may remove this after more testing
+    esbuildOptions: (options) => {
+      options.loader = {
+        ...options.loader,
+        ".svg": "dataurl",
+        ".png": "dataurl",
+        // ".jpg": "dataurl",
+        // ".jpeg": "dataurl",
+        ".gif": "dataurl",
+      };
       return options;
     },
   });

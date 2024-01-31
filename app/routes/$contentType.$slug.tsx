@@ -46,11 +46,13 @@ export default function Content() {
   const ContentComponent = useMemo(() => getMDXComponent(code), [code]);
 
   return (
-    <article className="prose px-4 dark:prose-invert prose-h1:uppercase sm:px-8">
-      <header>
+    <article className="px-4 sm:px-8">
+      <header className="prose grid max-w-none grid-cols-[1fr_min(65ch,_100%)_1fr] dark:prose-invert *:col-start-2 prose-h1:uppercase">
         <h1>{frontmatter.meta.title}</h1>
       </header>
-      <ContentComponent />
+      <div className="prose grid max-w-none grid-cols-[1fr_min(65ch,_100%)_1fr] dark:prose-invert *:col-start-2 prose-h1:uppercase">
+        <ContentComponent />
+      </div>
     </article>
   );
 }
