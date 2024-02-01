@@ -26,6 +26,10 @@ export default function App() {
         <Meta />
         <Links />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+        />
       </head>
       <body className=" dark:bg-black dark:text-white">
         <header className="flex px-2 py-4 sm:px-4">
