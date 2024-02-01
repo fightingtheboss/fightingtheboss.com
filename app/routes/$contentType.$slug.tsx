@@ -85,7 +85,7 @@ export default function Content() {
         </div>
         <div className="border-t-8 border-white xl:!col-start-2">{banner}</div>
       </header>
-      <div className="prose grid max-w-none grid-cols-[1fr_min(65ch,_100%)_1fr] dark:prose-invert *:col-start-2 prose-h1:uppercase">
+      <div className="prose grid max-w-none grid-cols-[1fr_min(65ch,_100%)_1fr] dark:prose-invert *:col-start-2 prose-headings:mb-0 prose-headings:mt-5 prose-h1:uppercase prose-p:mb-0">
         <ContentComponent />
       </div>
     </article>
