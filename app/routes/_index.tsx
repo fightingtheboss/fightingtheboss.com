@@ -70,7 +70,9 @@ export default function Index() {
           </li>
           <li className="py-1 md:py-2">
             <h3 className="font-bold uppercase leading-none">
-              Double Feature Series
+              <Link to={"/projects/double-feature-series"}>
+                Double Feature Series
+              </Link>
             </h3>
           </li>
         </ul>
