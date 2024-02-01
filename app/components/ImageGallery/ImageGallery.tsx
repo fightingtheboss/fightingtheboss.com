@@ -37,7 +37,11 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
               className="my-1 w-1/2 content-start px-1 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6"
             >
               <DialogTrigger onClick={() => handleDialogOpen(index)}>
-                <img src={image.src} alt={image.alt} className="rounded" />
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="not-prose rounded"
+                />
               </DialogTrigger>
             </figure>
           ))}
