@@ -44,9 +44,17 @@ export default function App() {
             </nav>
           </div>
         </header>
-        <main>
+        <main className="pb-8">
           <Outlet />
         </main>
+        <footer>
+          <div className="px-4 py-4 text-right sm:px-8">
+            <p className="text-xs">
+              &copy; {new Date().getFullYear()} Mina Mikhail. All rights
+              reserved.
+            </p>
+          </div>
+        </footer>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
