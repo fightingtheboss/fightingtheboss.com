@@ -56,23 +56,9 @@ export async function getContent(contentType: ContentType, slug: string) {
       import("remark-gfm").then((mod) => mod.default),
     ]);
 
-  const ImageGalleryFile = await readFile(
-    resolve(
-      process.cwd(),
-      "app",
-      "components",
-      "ImageGallery",
-      "ImageGallery.tsx"
-    ),
-    "utf8"
-  );
-
   const { code, frontmatter } = await bundleMDX({
     source,
     cwd: process.cwd(),
-    files: {
-      "../../components/ImageGallery/ImageGallery.tsx": ImageGalleryFile,
-    },
     mdxOptions: (options) => {
       options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkGfm];
       options.rehypePlugins = [
