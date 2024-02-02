@@ -30,7 +30,7 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <div className="!col-start-1 col-end-[-1] w-full">
-        <div className="flex flex-wrap py-8">
+        <div className="flex flex-wrap justify-center py-8">
           {images.map((image, index) => (
             <figure
               key={index}

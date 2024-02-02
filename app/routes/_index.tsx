@@ -29,28 +29,40 @@ export default function Index() {
 
       <div className="px-4 pb-4 sm:px-8 md:flex md:pb-8">
         <h2 className="py-4 md:w-40 md:flex-none">Work</h2>
-        <ul className="text-3xl sm:text-5xl md:text-8xl">
+        <ul className="text-dynamic">
           <li className="py-2">
-            <h3 className="font-bold uppercase leading-none">
+            <h3 className="group flex items-center font-bold uppercase leading-none">
               <Link to={"/work/shopify"}>Shopify</Link>
+              <span className="invisible basis-full pl-4 text-lg group-hover:visible">
+                {"-->"}
+              </span>
             </h3>
             <h4 className="text-xs md:text-sm">2018 &ndash; 2023</h4>
           </li>
           <li className="py-2">
-            <h3 className="font-bold uppercase leading-none">
+            <h3 className="group flex items-center font-bold uppercase leading-none">
               <Link to={"/work/general-assembly"}>General Assembly</Link>
+              <span className="invisible basis-full pl-4 text-lg group-hover:visible">
+                {"-->"}
+              </span>{" "}
             </h3>
             <h4 className="text-xs md:text-sm">2013 &ndash; 2018</h4>
           </li>
           <li className="py-2">
-            <h3 className="font-bold uppercase leading-none">
+            <h3 className="group flex items-center font-bold uppercase leading-none">
               <Link to={"/work/mubi"}>MUBI</Link>
+              <span className="invisible basis-full pl-4 text-lg group-hover:visible">
+                {"-->"}
+              </span>{" "}
             </h3>
             <h4 className="text-xs md:text-sm">2009 &ndash; 2012</h4>
           </li>
           <li className="py-2">
-            <h3 className="font-bold uppercase leading-none">
+            <h3 className="group flex items-center font-bold uppercase leading-none">
               <Link to={"/work/tiffr"}>TIFFR</Link>
+              <span className="invisible basis-full pl-4 text-lg group-hover:visible">
+                {"-->"}
+              </span>{" "}
             </h3>
             <h4 className="text-xs md:text-sm">2009 &ndash; present</h4>
           </li>
@@ -59,20 +71,31 @@ export default function Index() {
 
       <div className="px-4 pb-4 sm:px-8 md:flex lg:pb-8">
         <h2 className="py-4 md:w-40 md:flex-none">Projects</h2>
-        <ul className="text-3xl sm:text-5xl md:text-8xl">
+        <ul className="text-dynamic">
           <li className="py-1 md:py-2">
-            <h3 className="font-bold uppercase leading-none">Pegleg</h3>
-          </li>
-          <li className="py-1 md:py-2">
-            <h3 className="font-bold uppercase leading-none">
-              <Link to={"/projects/im-so-close"}>I&apos;m So Close</Link>
+            <h3 className="group flex items-center font-bold uppercase leading-none">
+              <Link to={"projects/pegleg"}>Pegleg</Link>
+              <span className="invisible basis-full pl-4 text-lg group-hover:visible">
+                {"-->"}
+              </span>{" "}
             </h3>
           </li>
           <li className="py-1 md:py-2">
-            <h3 className="font-bold uppercase leading-none">
+            <h3 className="group flex items-center font-bold uppercase leading-none">
+              <Link to={"/projects/im-so-close"}>I&apos;m So Close</Link>
+              <span className="invisible basis-full pl-4 text-lg group-hover:visible">
+                {"-->"}
+              </span>{" "}
+            </h3>
+          </li>
+          <li className="py-1 md:py-2">
+            <h3 className="group flex items-center font-bold uppercase leading-none">
               <Link to={"/projects/double-feature-series"}>
                 Double Feature Series
               </Link>
+              <span className="invisible basis-full pl-4 text-lg group-hover:visible">
+                {"-->"}
+              </span>{" "}
             </h3>
           </li>
         </ul>

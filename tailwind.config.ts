@@ -21,6 +21,9 @@ export default {
           { fontFeatureSettings: '"zero" 1, "ss01" 1, "ss08" 1' },
         ],
       },
+      fontSize: {
+        dynamic: "clamp(1.875rem, -18.7500rem + 51.5625vw, 6rem)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

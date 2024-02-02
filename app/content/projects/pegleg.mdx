@@ -1,0 +1,25 @@
+---
+meta:
+  title: Pegleg
+  description: Pegleg was a Meteor application that crowdsourced full-length movies from YouTube
+  banner:
+    src: https://fightingtheboss.com/projects/pegleg/feature.png
+    alt: A screenshot of the Pegleg website
+  skills:
+    - Code
+    - Interaction
+    - Design
+---
+
+import ImageGallery from "~/components/ImageGallery/ImageGallery.tsx";
+
+Pegleg crowd-sourced full-length movies from YouTube. It was built with Meteor, a full-stack Javascript framework that makes creating real-time web applications simple, quick and fun.
+
+This app used data from TMDB along with the YouTube API to do a customized search for videos that could be the full-length film. Users determined if a particular video was actually the film in question by voting. Videos with enough downvotes, along with those that are no longer available on YouTube, are automatically removed. Multi-part videos were supported and were automatically joined into a playlist when any individual part was added.
+
+<ImageGallery images={[
+  { src: "https://fightingtheboss.com/projects/pegleg/landing.png", alt: "Screenshot of Pegleg landing page"},
+  { src: "https://fightingtheboss.com/projects/pegleg/recent.png", alt: "Screenshot showing recent movies added to Pegleg"},
+  { src: "https://fightingtheboss.com/projects/pegleg/filter.png", alt: "Screenshot showing the filtering capabilities in Pegleg"},
+  { src: "https://fightingtheboss.com/projects/pegleg/film-detail.png", alt: "Screenshot showing a movie page in Pegleg"},
+]} />

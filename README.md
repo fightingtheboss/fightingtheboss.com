@@ -3,11 +3,9 @@
 This is a Remix app. Most of the content is written in MDX.
 
 ## TODO
-- Figure out how to add images to posts (and style them!)
-- Figure out how to add other embeds to posts (like a code sandbox or other imports)
+- Hover states for links, preferrably with animation
 - Actually write the content for each page
   - Likely build a basic image gallery component for projects
-- Add custom default styles for @tailwindcss/typography for MDX files
 - Dark mode toggle (or just switch it back to the default detection mode)
 - Once satisfied, point the domain at it
 - Could also investigate caching the posts in sqlite/litefs, using prisma as ORM
