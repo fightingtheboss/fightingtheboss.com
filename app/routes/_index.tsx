@@ -33,7 +33,7 @@ export default function Index() {
           <li className="py-2">
             <h3 className="group flex items-center font-bold uppercase leading-none">
               <Link to={"/work/shopify"}>Shopify</Link>
-              <span className="invisible basis-full pl-4 text-lg group-hover:visible">
+              <span className="invisible text-nowrap pl-4 text-lg group-hover:visible">
                 {"-->"}
               </span>
             </h3>
@@ -42,7 +42,7 @@ export default function Index() {
           <li className="py-2">
             <h3 className="group flex items-center font-bold uppercase leading-none">
               <Link to={"/work/general-assembly"}>General Assembly</Link>
-              <span className="invisible basis-full pl-4 text-lg group-hover:visible">
+              <span className="invisible text-nowrap pl-4 text-lg group-hover:visible">
                 {"-->"}
               </span>{" "}
             </h3>
@@ -51,7 +51,7 @@ export default function Index() {
           <li className="py-2">
             <h3 className="group flex items-center font-bold uppercase leading-none">
               <Link to={"/work/mubi"}>MUBI</Link>
-              <span className="invisible basis-full pl-4 text-lg group-hover:visible">
+              <span className="invisible text-nowrap pl-4 text-lg group-hover:visible">
                 {"-->"}
               </span>{" "}
             </h3>
@@ -60,7 +60,7 @@ export default function Index() {
           <li className="py-2">
             <h3 className="group flex items-center font-bold uppercase leading-none">
               <Link to={"/work/tiffr"}>TIFFR</Link>
-              <span className="invisible basis-full pl-4 text-lg group-hover:visible">
+              <span className="invisible text-nowrap pl-4 text-lg group-hover:visible">
                 {"-->"}
               </span>{" "}
             </h3>
@@ -75,7 +75,7 @@ export default function Index() {
           <li className="py-1 md:py-2">
             <h3 className="group flex items-center font-bold uppercase leading-none">
               <Link to={"projects/pegleg"}>Pegleg</Link>
-              <span className="invisible basis-full pl-4 text-lg group-hover:visible">
+              <span className="invisible text-nowrap pl-4 text-lg group-hover:visible">
                 {"-->"}
               </span>{" "}
             </h3>
@@ -83,7 +83,7 @@ export default function Index() {
           <li className="py-1 md:py-2">
             <h3 className="group flex items-center font-bold uppercase leading-none">
               <Link to={"/projects/im-so-close"}>I&apos;m So Close</Link>
-              <span className="invisible basis-full pl-4 text-lg group-hover:visible">
+              <span className="invisible text-nowrap pl-4 text-lg group-hover:visible">
                 {"-->"}
               </span>{" "}
             </h3>
@@ -93,7 +93,7 @@ export default function Index() {
               <Link to={"/projects/double-feature-series"}>
                 Double Feature Series
               </Link>
-              <span className="invisible basis-full pl-4 text-lg group-hover:visible">
+              <span className="invisible text-nowrap pl-4 text-lg group-hover:visible">
                 {"-->"}
               </span>{" "}
             </h3>

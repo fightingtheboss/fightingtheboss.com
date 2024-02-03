@@ -6,6 +6,9 @@ import animate from "tailwindcss-animate";
 export default {
   content: ["./app/**/*.{js,jsx,ts,tsx}"],
   darkMode: "class",
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   theme: {
     container: {
       center: true,
