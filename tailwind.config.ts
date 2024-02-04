@@ -2,6 +2,7 @@ import typography from "@tailwindcss/typography";
 import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
 import animate from "tailwindcss-animate";
+import textFill from "tailwindcss-text-fill";
 
 export default {
   content: ["./app/**/*.{js,jsx,ts,tsx}"],
@@ -26,6 +27,17 @@ export default {
       },
       fontSize: {
         dynamic: "clamp(1.875rem, -18.7500rem + 51.5625vw, 6rem)",
+      },
+      // Uses indigo-600 and sky-500 as the color stops. --link-hover-bg is defined on the element for now.
+      backgroundImage: {
+        "link-hover":
+          "linear-gradient(135deg, #4f46e5 0%, #0ea5e9 40%, var(--link-hover-bg) 40.01%, var(--link-hover-bg) 80%)",
+      },
+      backgroundSize: {
+        "link-hover": "300%",
+      },
+      backgroundPosition: {
+        "link-hover": "65% 0",
       },
       colors: {
         border: "hsl(var(--border))",
@@ -76,12 +88,17 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "link-hover": {
+          from: { "background-position": "65% 0" },
+          to: { "background-position": "0% 0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "link-hover": "link-hover 0.5s ease forwards",
       },
     },
   },
-  plugins: [typography, animate],
+  plugins: [typography, animate, textFill],
 } satisfies Config;

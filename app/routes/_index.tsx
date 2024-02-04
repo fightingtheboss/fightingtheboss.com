@@ -32,7 +32,9 @@ export default function Index() {
         <ul className="text-dynamic">
           <li className="py-2">
             <h3 className="group flex items-center font-bold uppercase leading-none">
-              <Link to={"/work/shopify"}>Shopify</Link>
+              <Link to={"/work/shopify"} className="link-hover">
+                Shopify
+              </Link>
               <span className="invisible text-nowrap pl-4 text-lg group-hover:visible">
                 {"-->"}
               </span>
@@ -41,7 +43,9 @@ export default function Index() {
           </li>
           <li className="py-2">
             <h3 className="group flex items-center font-bold uppercase leading-none">
-              <Link to={"/work/general-assembly"}>General Assembly</Link>
+              <Link to={"/work/general-assembly"} className="link-hover">
+                General Assembly
+              </Link>
               <span className="invisible text-nowrap pl-4 text-lg group-hover:visible">
                 {"-->"}
               </span>{" "}
@@ -50,7 +54,9 @@ export default function Index() {
           </li>
           <li className="py-2">
             <h3 className="group flex items-center font-bold uppercase leading-none">
-              <Link to={"/work/mubi"}>MUBI</Link>
+              <Link to={"/work/mubi"} className="link-hover">
+                MUBI
+              </Link>
               <span className="invisible text-nowrap pl-4 text-lg group-hover:visible">
                 {"-->"}
               </span>{" "}
@@ -59,7 +65,9 @@ export default function Index() {
           </li>
           <li className="py-2">
             <h3 className="group flex items-center font-bold uppercase leading-none">
-              <Link to={"/work/tiffr"}>TIFFR</Link>
+              <Link to={"/work/tiffr"} className="link-hover">
+                TIFFR
+              </Link>
               <span className="invisible text-nowrap pl-4 text-lg group-hover:visible">
                 {"-->"}
               </span>{" "}
@@ -74,7 +82,9 @@ export default function Index() {
         <ul className="text-dynamic">
           <li className="py-1 md:py-2">
             <h3 className="group flex items-center font-bold uppercase leading-none">
-              <Link to={"projects/pegleg"}>Pegleg</Link>
+              <Link to={"projects/pegleg"} className="link-hover">
+                Pegleg
+              </Link>
               <span className="invisible text-nowrap pl-4 text-lg group-hover:visible">
                 {"-->"}
               </span>{" "}
@@ -82,7 +92,9 @@ export default function Index() {
           </li>
           <li className="py-1 md:py-2">
             <h3 className="group flex items-center font-bold uppercase leading-none">
-              <Link to={"/projects/im-so-close"}>I&apos;m So Close</Link>
+              <Link to={"/projects/im-so-close"} className="link-hover">
+                I&apos;m So Close
+              </Link>
               <span className="invisible text-nowrap pl-4 text-lg group-hover:visible">
                 {"-->"}
               </span>{" "}
@@ -90,7 +102,10 @@ export default function Index() {
           </li>
           <li className="py-1 md:py-2">
             <h3 className="group flex items-center font-bold uppercase leading-none">
-              <Link to={"/projects/double-feature-series"}>
+              <Link
+                to={"/projects/double-feature-series"}
+                className="link-hover"
+              >
                 Double Feature Series
               </Link>
               <span className="invisible text-nowrap pl-4 text-lg group-hover:visible">
