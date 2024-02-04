@@ -2,11 +2,7 @@ import type { LoaderFunction, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 
-import {
-  ContentListing,
-  ContentListingItem,
-  getContentListing,
-} from "~/utils/mdx.server";
+import { ContentListingItem, getContentListing } from "~/utils/mdx.server";
 
 export const meta: MetaFunction = () => {
   return [
