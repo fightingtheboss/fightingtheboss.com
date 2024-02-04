@@ -35,7 +35,9 @@ export default function App() {
         <header className="flex px-2 py-4 sm:px-4">
           <div className="flex-auto px-2 sm:px-4">
             <h1 className="text-2xl font-bold leading-5 tracking-widest">
-              <Link to={"/"}>MINA MIKHAIL</Link>
+              <Link to={"/"} className="link-hover">
+                MINA MIKHAIL
+              </Link>
             </h1>
           </div>
           <div className="flex-auto px-2 sm:px-4">

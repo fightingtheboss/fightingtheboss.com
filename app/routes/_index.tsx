@@ -1,5 +1,12 @@
-import type { MetaFunction } from "@remix-run/node";
-import { Link } from "@remix-run/react";
+import type { LoaderFunction, MetaFunction } from "@remix-run/node";
+import { json } from "@remix-run/node";
+import { Link, useLoaderData } from "@remix-run/react";
+
+import {
+  ContentListing,
+  ContentListingItem,
+  getContentListing,
+} from "~/utils/mdx.server";
 
 export const meta: MetaFunction = () => {
   return [
@@ -11,7 +18,16 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+export const loader: LoaderFunction = async () => {
+  const workListing = await getContentListing("work");
+  const projectListing = await getContentListing("projects");
+
+  return json({ work: workListing, projects: projectListing });
+};
+
 export default function Index() {
+  const { work, projects } = useLoaderData<typeof loader>();
+
   return (
     <article>
       <div className="headline px-4 pt-4 sm:px-8 lg:pt-8">
@@ -30,89 +46,46 @@ export default function Index() {
       <div className="px-4 pb-4 sm:px-8 md:flex md:pb-8">
         <h2 className="py-4 md:w-40 md:flex-none">Work</h2>
         <ul className="text-dynamic">
-          <li className="py-2">
-            <h3 className="group flex items-center font-bold uppercase leading-none">
-              <Link to={"/work/shopify"} className="link-hover">
-                Shopify
-              </Link>
-              <span className="invisible text-nowrap pl-4 text-lg group-hover:visible">
-                {"-->"}
-              </span>
-            </h3>
-            <h4 className="text-xs md:text-sm">2018 &ndash; 2023</h4>
-          </li>
-          <li className="py-2">
-            <h3 className="group flex items-center font-bold uppercase leading-none">
-              <Link to={"/work/general-assembly"} className="link-hover">
-                General Assembly
-              </Link>
-              <span className="invisible text-nowrap pl-4 text-lg group-hover:visible">
-                {"-->"}
-              </span>{" "}
-            </h3>
-            <h4 className="text-xs md:text-sm">2013 &ndash; 2018</h4>
-          </li>
-          <li className="py-2">
-            <h3 className="group flex items-center font-bold uppercase leading-none">
-              <Link to={"/work/mubi"} className="link-hover">
-                MUBI
-              </Link>
-              <span className="invisible text-nowrap pl-4 text-lg group-hover:visible">
-                {"-->"}
-              </span>{" "}
-            </h3>
-            <h4 className="text-xs md:text-sm">2009 &ndash; 2012</h4>
-          </li>
-          <li className="py-2">
-            <h3 className="group flex items-center font-bold uppercase leading-none">
-              <Link to={"/work/tiffr"} className="link-hover">
-                TIFFR
-              </Link>
-              <span className="invisible text-nowrap pl-4 text-lg group-hover:visible">
-                {"-->"}
-              </span>{" "}
-            </h3>
-            <h4 className="text-xs md:text-sm">2009 &ndash; present</h4>
-          </li>
+          {work.map((work: ContentListingItem) => (
+            <li key={work.slug} className="py-2">
+              <h3 className="group flex items-center font-bold uppercase leading-none">
+                <Link
+                  to={`/work/${work.slug}`}
+                  className="link-hover transition active:-translate-y-1 active:scale-110"
+                >
+                  {work.frontmatter.meta.title}
+                </Link>
+                <span className="invisible text-nowrap pl-4 text-lg group-hover:visible group-active:visible">
+                  {"-->"}
+                </span>
+              </h3>
+              <h4 className="text-xs md:text-sm">
+                {work.frontmatter.meta.tenure.startYear} &ndash;{" "}
+                {work.frontmatter.meta.tenure.endYear}
+              </h4>
+            </li>
+          ))}
         </ul>
       </div>
 
       <div className="px-4 pb-4 sm:px-8 md:flex lg:pb-8">
         <h2 className="py-4 md:w-40 md:flex-none">Projects</h2>
         <ul className="text-dynamic">
-          <li className="py-1 md:py-2">
-            <h3 className="group flex items-center font-bold uppercase leading-none">
-              <Link to={"projects/pegleg"} className="link-hover">
-                Pegleg
-              </Link>
-              <span className="invisible text-nowrap pl-4 text-lg group-hover:visible">
-                {"-->"}
-              </span>{" "}
-            </h3>
-          </li>
-          <li className="py-1 md:py-2">
-            <h3 className="group flex items-center font-bold uppercase leading-none">
-              <Link to={"/projects/im-so-close"} className="link-hover">
-                I&apos;m So Close
-              </Link>
-              <span className="invisible text-nowrap pl-4 text-lg group-hover:visible">
-                {"-->"}
-              </span>{" "}
-            </h3>
-          </li>
-          <li className="py-1 md:py-2">
-            <h3 className="group flex items-center font-bold uppercase leading-none">
-              <Link
-                to={"/projects/double-feature-series"}
-                className="link-hover"
-              >
-                Double Feature Series
-              </Link>
-              <span className="invisible text-nowrap pl-4 text-lg group-hover:visible">
-                {"-->"}
-              </span>{" "}
-            </h3>
-          </li>
+          {projects.map((project: ContentListingItem) => (
+            <li key={project.slug} className="py-1 md:py-2">
+              <h3 className="group flex items-center font-bold uppercase leading-none">
+                <Link
+                  to={`/projects/${project.slug}`}
+                  className="link-hover transition active:-translate-y-1 active:scale-110"
+                >
+                  {project.frontmatter.meta.title}
+                </Link>
+                <span className="invisible text-nowrap pl-4 text-lg group-hover:visible group-active:visible">
+                  {"-->"}
+                </span>
+              </h3>
+            </li>
+          ))}
         </ul>
       </div>
     </article>

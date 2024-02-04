@@ -2,8 +2,15 @@ import { readFile, readdir } from "fs/promises";
 import { resolve } from "path";
 
 import { bundleMDX } from "mdx-bundler";
+import { sortBy } from "sort-by-typescript";
 
 export type ContentType = "work" | "projects" | "posts" | "*";
+export interface ContentListingItem {
+  slug: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  frontmatter: Record<string, any>;
+}
+export type ContentListing = ContentListingItem[];
 
 /**
  * Get all the slugs for a given content type
@@ -23,7 +30,9 @@ export async function getSlugs(contentType: ContentType) {
  * Get all the frontmatter for a given content type
  * @param contentType The content type to fetch
  */
-export async function getContentListing(contentType: ContentType) {
+export async function getContentListing(
+  contentType: ContentType
+): Promise<ContentListing> {
   const slugs = await getSlugs(contentType);
   const content = await Promise.all(
     slugs.map(async (slug) => {
@@ -35,7 +44,7 @@ export async function getContentListing(contentType: ContentType) {
     })
   );
 
-  return content;
+  return content.sort(sortBy("frontmatter.content_type_order"));
 }
 
 /**
