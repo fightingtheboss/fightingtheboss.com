@@ -1,6 +1,12 @@
 import type { LoaderFunction, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
+import {
+  GitHubLogoIcon,
+  TwitterLogoIcon,
+  LinkedInLogoIcon,
+  FileTextIcon,
+} from "@radix-ui/react-icons";
 
 import { ContentListingItem, getContentListing } from "~/utils/mdx.server";
 
@@ -32,10 +38,46 @@ export default function Index() {
           based in Toronto.
         </h1>
         <ul className="flex py-4">
-          <li className="py-2 pr-4">GitHub</li>
-          <li className="px-4 py-2">Twitter</li>
-          <li className="px-4 py-2">LinkedIn</li>
-          <li className="py-2 pl-4">CV</li>
+          <li className="py-2 pr-4">
+            <Link
+              to={"https://github.com/fightingtheboss"}
+              title="GitHub"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <GitHubLogoIcon className="scale-150" />
+            </Link>
+          </li>
+          <li className="px-4 py-2">
+            <Link
+              to={"https://twitter.com/fightingtheboss"}
+              title="Twitter"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <TwitterLogoIcon className="scale-150" />
+            </Link>
+          </li>
+          <li className="px-4 py-2">
+            <Link
+              to={"https://www.linkedin.com/in/minamikhail/"}
+              title="LinkedIn"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <LinkedInLogoIcon className="scale-150" />
+            </Link>
+          </li>
+          <li className="py-2 pl-4">
+            <Link
+              to={
+                "https://fightingtheboss.com/pdf/mina_mikhail_resume_2024.pdf"
+              }
+              title="Resume / CV"
+            >
+              <FileTextIcon className="scale-150" />
+            </Link>
+          </li>
         </ul>
       </div>
 
@@ -68,7 +110,7 @@ export default function Index() {
         <h2 className="py-4 md:w-40 md:flex-none">Projects</h2>
         <ul className="text-dynamic">
           {projects.map((project: ContentListingItem) => (
-            <li key={project.slug} className="py-1 md:py-2">
+            <li key={project.slug} className="py-2">
               <h3 className="group flex items-center font-bold uppercase leading-none">
                 <Link
                   to={`/projects/${project.slug}`}

@@ -3,11 +3,14 @@
 This is a Remix app. Most of the content is written in MDX.
 
 ## TODO
-- Hover states for links, preferrably with animation
 - Actually write the content for each page
-  - Likely build a basic image gallery component for projects
 - Dark mode toggle (or just switch it back to the default detection mode)
+- Switch current S3 bucket to be a CDN (cdn.fightingtheboss.com)
+  - Change all current image URLs to use the new subdomain
+  - No need to move or remove existing files
+
 - Once satisfied, point the domain at it
+  - Likely do DNS at Cloudflare
 - Could also investigate caching the posts in sqlite/litefs, using prisma as ORM
 
 ## Running locally
