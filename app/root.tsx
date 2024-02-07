@@ -68,7 +68,7 @@ function App() {
         <header className="flex px-2 py-4 sm:px-4">
           <div className="flex-auto px-2 sm:px-4">
             <h1 className="text-2xl font-bold leading-5 tracking-widest">
-              <Link to={"/"} className="link-hover">
+              <Link to={"/"} className="link-hover hover:animate-link-hover-in">
                 MINA MIKHAIL
               </Link>
             </h1>

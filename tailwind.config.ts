@@ -88,7 +88,7 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "link-hover": {
+        "link-hover-in": {
           from: { "background-position": "65% 0" },
           to: { "background-position": "0% 0" },
         },
@@ -96,7 +96,7 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "link-hover": "link-hover 0.5s ease forwards",
+        "link-hover-in": "link-hover-in 0.5s ease forwards",
       },
     },
   },

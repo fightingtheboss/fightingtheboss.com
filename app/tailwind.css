@@ -81,6 +81,6 @@
 
 @layer components {
   .link-hover {
-    @apply bg-link-hover text-fill-transparent hover:animate-link-hover bg-clip-text;
+    @apply bg-link-hover text-fill-transparent bg-clip-text;
   }
 }

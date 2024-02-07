@@ -89,7 +89,7 @@ export default function Index() {
               <h3 className="group flex items-center font-bold uppercase leading-none">
                 <Link
                   to={`/work/${work.slug}`}
-                  className="link-hover transition hover:drop-shadow-[1px_1px_0px_rgba(255,255,255,.85)] active:-translate-y-1 active:scale-110"
+                  className="link-hover transition hover:animate-link-hover-in hover:drop-shadow-[1px_1px_0px_rgba(0,0,0,.25)] active:-translate-y-1 active:scale-110 dark:hover:drop-shadow-[1px_1px_0px_rgba(255,255,255,.85)]"
                 >
                   {work.frontmatter.meta.title}
                 </Link>
@@ -114,7 +114,7 @@ export default function Index() {
               <h3 className="group flex items-center font-bold uppercase leading-none">
                 <Link
                   to={`/projects/${project.slug}`}
-                  className="link-hover transition hover:drop-shadow-[1px_1px_0px_rgba(255,255,255,.85)] active:-translate-y-1 active:scale-110"
+                  className="link-hover transition hover:animate-link-hover-in hover:drop-shadow-[1px_1px_0px_rgba(0,0,0,.25)] active:-translate-y-1 active:scale-110 dark:hover:drop-shadow-[1px_1px_0px_rgba(255,255,255,.85)]"
                 >
                   {project.frontmatter.meta.title}
                 </Link>
