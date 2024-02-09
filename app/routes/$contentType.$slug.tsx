@@ -70,9 +70,9 @@ export default function Content() {
   ) : null;
 
   return (
-    <article className="px-4 sm:px-8">
+    <article className="px-4 sm:px-8 md:pt-4 xl:pt-0">
       <header className="prose mb-6 grid max-w-none grid-cols-[1fr_min(65ch,_100%)_1fr] dark:prose-invert *:col-start-2 xl:*:col-start-1">
-        <div className="border-t-8 border-black dark:border-white xl:pr-4">
+        <div className="border-t-8 border-black dark:border-white xl:pr-8">
           <h4 className="mb-1 mt-4 text-xs font-black uppercase">
             {contentType}
           </h4>
