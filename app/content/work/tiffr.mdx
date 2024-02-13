@@ -9,6 +9,38 @@ meta:
     startDate: Aug 2009
     endDate: Present
   location: Toronto, Canada
+  url: https://tiffr.com
 ---
 
-TIFFR is a scheduling platform for the Toronto International Film Festival (TIFF)
+TIFFR is a planning tool that helps attendees of the [Toronto International Film Festival (TIFF)](https://tiff.net) easily create their festival schedule.
+The app guides users to shortlist the films they want to see, and then helps them create a schedule that minimizes conflicts. It saves time, and it's fun to use.
+
+We've been working closely with TIFF since the inception in 2009, and have been official community partners since 2018.
+This takes the form of our shortlisting button being embedded on the official TIFF schedule so that users can easily add films to their shortlist from the TIFF website.
+From there, they can use our app to create their schedule, and then export it to their calendar.
+
+## Background
+As an annual attendee of the Toronto International Film Festival since 2000, the challenge of making my schedule for the festival has always been a daunting task.
+The typical festival shows between 300 and 400 films, each with 3 screenings each on average, over a 10 day period. That's up to 1200 events (and this doesn't even include press & industry talks and events!).
+Even the most dedicated festival-goer can only attend a maximum of 50 events over that period, so the challenge is to figure out how to optimize your time.
+
+In 2009, my friend Ryan Ming and I decided to create a web application to help us and others make this work simpler, and dare we say, fun.
+We've been running the app continuously since 2009, and it has been a great way to learn new technologies and keep our skills sharp.
+We've also been able to help thousands of people make their festival schedules over the years.
+
+## History
+
+### 2009 - 2012
+
+The initial version of the site was our first foray into using Ruby on Rails. Our goal was a very minimal application that didn't duplicate any of the content on the TIFF website. To make that happen, we had users install a bookmarklet in their browser bar, which, when clicked, would save the film they were looking at to their shortlist on TIFFR.
+
+### 2013 - 2015
+
+We did a rewrite of the Rails app in 2013 to better support multiple festivals and started using AngularJS to make the app more interactive.
+It was a great learning experiment, but, along with the AngularJS core team, we quickly ran into the limitations of the framework and eventually removed it in favour of React.
+This iteration also came with more  experimentations with design that used more of the modern web's capabilities.
+
+### 2016 - Present
+
+We did a rebrand and redesign of the app in 2016, and have been using React ever since, but only for the scheduling view.
+As the years have passed, we've become more enamoured with the Rails ecosystem and have pared back uses of React in favour of regular Rails views and sprinkles of JavaScript with Turbo.
