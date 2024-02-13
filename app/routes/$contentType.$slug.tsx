@@ -9,6 +9,7 @@ import { getMDXComponent } from "mdx-bundler/client/index.js";
 import { useMemo } from "react";
 import invariant from "tiny-invariant";
 
+import heading from "~/components/MdxHeading/MdxHeading";
 import { ContentType, getContent } from "~/utils/mdx.server";
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
@@ -87,8 +88,17 @@ export default function Content() {
           {banner}
         </div>
       </header>
-      <div className="prose grid max-w-none grid-cols-[1fr_min(65ch,_100%)_1fr] dark:prose-invert *:col-start-2 prose-headings:mb-0 prose-headings:mt-5 prose-h1:uppercase prose-p:mb-0">
-        <ContentComponent />
+      <div className="prose grid max-w-none grid-cols-[1fr_min(65ch,_100%)_1fr] dark:prose-invert *:col-start-2 prose-headings:mb-0 prose-headings:mt-5 prose-headings:font-medium prose-h1:uppercase prose-h3:text-base prose-h3:uppercase prose-p:mb-0 prose-a:decoration-indigo-600 prose-a:decoration-2 prose-a:underline-offset-4">
+        <ContentComponent
+          components={{
+            h1: heading("h1"),
+            h2: heading("h2"),
+            h3: heading("h3"),
+            h4: heading("h4"),
+            h5: heading("h5"),
+            h6: heading("h6"),
+          }}
+        />
       </div>
     </article>
   );

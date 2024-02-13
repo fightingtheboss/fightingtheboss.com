@@ -57,13 +57,11 @@ export async function getContent(contentType: ContentType, slug: string) {
     "utf8"
   );
 
-  const [rehypeAutolinkHeadings, rehypeHighlight, rehypeSlug, remarkGfm] =
-    await Promise.all([
-      import("rehype-autolink-headings").then((mod) => mod.default),
-      import("rehype-highlight").then((mod) => mod.default),
-      import("rehype-slug").then((mod) => mod.default),
-      import("remark-gfm").then((mod) => mod.default),
-    ]);
+  const [rehypeHighlight, rehypeSlug, remarkGfm] = await Promise.all([
+    import("rehype-highlight").then((mod) => mod.default),
+    import("rehype-slug").then((mod) => mod.default),
+    import("remark-gfm").then((mod) => mod.default),
+  ]);
 
   const { code, frontmatter } = await bundleMDX({
     source,
@@ -73,7 +71,6 @@ export async function getContent(contentType: ContentType, slug: string) {
       options.rehypePlugins = [
         ...(options.rehypePlugins ?? []),
         rehypeSlug,
-        rehypeAutolinkHeadings,
         rehypeHighlight,
       ];
       return options;
