@@ -76,7 +76,7 @@ function App() {
           <div className="flex-auto px-2 sm:px-4">
             <nav>
               <ul className="flex justify-end">
-                <li className="relative block px-2">About</li>
+                {/* <li className="relative block px-2">About</li> */}
                 <li className="relative block px-2">
                   <div className="inline-grid grid-flow-row-dense grid-cols-none items-center gap-2">
                     <Themed
