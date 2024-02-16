@@ -54,11 +54,15 @@ export default function Content() {
   ) : null;
 
   const banner = frontmatter.meta.banner ? (
-    <img
-      src={frontmatter.meta.banner.src}
-      alt={frontmatter.meta.banner.alt}
-      className="mb-0 mt-4 rounded"
-    />
+    <div
+      className={`mb-0 mt-4 rounded border border-slate-200 p-0 dark:border-none dark:bg-white dark:p-2 ${frontmatter.meta.banner.logo ? "flex h-full flex-col justify-center" : ""}`}
+    >
+      <img
+        src={frontmatter.meta.banner.src}
+        alt={frontmatter.meta.banner.alt}
+        className={`m-0 rounded ${frontmatter.meta.banner.logo ? "mx-auto w-1/2 py-4" : ""}`}
+      />
+    </div>
   ) : (
     <div className="xl:mt-4 xl:block xl:h-[calc(100%_-_1rem)] xl:w-full xl:bg-black dark:xl:bg-white"></div>
   );
@@ -71,8 +75,8 @@ export default function Content() {
   ) : null;
 
   return (
-    <article className="px-4 sm:px-8 md:pt-4 xl:pt-0">
-      <header className="prose mb-6 grid max-w-none grid-cols-[1fr_min(65ch,_100%)_1fr] dark:prose-invert *:col-start-2 xl:*:col-start-1">
+    <article className="grid grid-cols-[1fr_min(65ch,_100%)_1fr] px-4 sm:px-8 md:pt-4 xl:pt-0">
+      <header className="prose col-span-3 mb-6 grid max-w-none grid-cols-subgrid dark:prose-invert *:col-start-2 xl:*:col-start-1">
         <div className="border-t-8 border-black dark:border-white xl:pr-8">
           <h4 className="mb-1 mt-4 text-xs font-black uppercase">
             {contentType}
@@ -88,7 +92,7 @@ export default function Content() {
           {banner}
         </div>
       </header>
-      <div className="prose grid max-w-none grid-cols-[1fr_min(65ch,_100%)_1fr] dark:prose-invert *:col-start-2 prose-headings:mb-0 prose-headings:mt-5 prose-headings:font-medium prose-h1:uppercase prose-h3:text-base prose-h3:uppercase prose-p:mb-0 prose-a:decoration-indigo-600 prose-a:decoration-2 prose-a:underline-offset-4">
+      <div className="prose prose-xl col-span-3 grid max-w-none grid-cols-subgrid dark:prose-invert md:prose-base *:col-start-2 prose-headings:mb-0 prose-headings:mt-5 prose-headings:font-medium prose-h1:uppercase prose-h3:text-lg prose-p:my-3 prose-a:decoration-indigo-600 prose-a:decoration-2 prose-a:underline-offset-2 prose-img:my-2">
         <ContentComponent
           components={{
             h1: heading("h1"),
