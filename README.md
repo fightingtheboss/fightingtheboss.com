@@ -1,16 +1,13 @@
 # fightingtheboss.com
 
-This is a Remix app. Most of the content is written in MDX.
+I've maintained some form of website at fightingtheboss.com since 2000, usually with blogging capabilities. This is the latest incarnation.
+
+This is a Remix app. Most of the content is written in MDX and committed to the repo.
 
 ## TODO
-- Actually write the content for each page
-- Dark mode toggle (or just switch it back to the default detection mode)
-- Switch current S3 bucket to be a CDN (cdn.fightingtheboss.com)
-  - Change all current image URLs to use the new subdomain
-  - No need to move or remove existing files
-
-- Once satisfied, point the domain at it
-  - Likely do DNS at Cloudflare
+- Replace shadcn Dialog with Radix UI Dialog and style
+- Add images to the TIFFR page
+- Add an About page
 - Could also investigate caching the posts in sqlite/litefs, using prisma as ORM
 
 ## Running locally
