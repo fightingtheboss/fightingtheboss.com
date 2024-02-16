@@ -63,7 +63,7 @@ function App() {
           href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
         />
       </head>
-      <body className="border-t-8 border-black dark:border-white">
+      <body className="grid min-h-screen grid-cols-1 grid-rows-[auto_1fr_auto] border-t-8 border-black dark:border-white">
         <ThemeBody ssrTheme={Boolean(data.theme)} />
         <header className="flex px-2 py-4 sm:px-4">
           <div className="flex-auto px-2 sm:px-4">
