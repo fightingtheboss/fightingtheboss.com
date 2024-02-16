@@ -29,18 +29,18 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <div className="!col-start-1 col-end-[-1] w-full">
-        <div className="flex flex-wrap justify-center py-8">
+      <div className="not-prose !col-start-1 col-end-[-1] w-full">
+        <div className="flex flex-wrap justify-center py-4">
           {images.map((image, index) => (
             <figure
               key={index}
-              className="my-1 w-1/2 content-start px-1 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6"
+              className="my-1 basis-1/2 content-start px-1 sm:basis-1/3 2xl:basis-1/6"
             >
               <DialogTrigger onClick={() => handleDialogOpen(index)}>
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="not-prose rounded"
+                  className="not-prose rounded shadow-xl"
                 />
               </DialogTrigger>
             </figure>
