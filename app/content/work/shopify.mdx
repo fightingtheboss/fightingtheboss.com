@@ -2,7 +2,11 @@
 content_type_order: 1
 meta:
   title: Shopify
-  description: I was an Enginering Manager at Shopify for almost 6 years.
+  description: I was an Enginering Manager across several mission critical areas at Shopify for almost 6 years.
+  banner:
+    src: https://cdn.fightingtheboss.com/work/shopify/shopify-logo-black.png
+    alt: Shopify logo
+    logo: true
   tenure:
     startYear: 2018
     endYear: 2023
@@ -11,14 +15,57 @@ meta:
   location: Toronto, Canada (Remote)
 ---
 
+I started at Shopify at the beginning of 2018 when the company was still in its hyper-growth phase. I started briefly as a Senior Developer, quickly taking on reports and moving officially into the Engineering Manager role. My time at Shopify was a period of immense growth and learning, and I'm grateful for the opportunity to have worked with so many amazingly talented and dedicated people, solving complex problems at scale.
+
 ## Vault Tools
 
-The Vault Tools team was focused on improving context sharing and project management across Shopify.
+The Vault Tools team was focused on improving context sharing and project management across Shopify. The Vault, the internal hub for all things Shopify, was the main focus of the team. The Vault had two main components: the context engine for the company, sharing knowledge about people, teams, HR-related information, as well as domain-specific information (i.e. technical docs, go-to-market strategies, etc.), plus a recognition tool; and the project management tool, which was used to track and manage projects across the company.
+
+We were responsible for helping to evolve the custom project management process (called GSD), as well as creating the tools to support the process. This meant a lot of coordination with senior leadership to understand the overarching objectives and then working to build features to support those objectives.
+
+Over the years we evolved the Vault from a fairly barebones Rails app, to a highly-polished, featureful content management system, with integrations with several different systems (e.g. Workday, Slack, etc.). GSD went from a loose set of principles to a highly-structured yet lightweight process that provided greater insight and visibility into where investments were being made, and a feedback loop to ensure that the right investments were being made at the right time.
+
+[Here's a video of then-CTO Jean-Michel Lemieux doing a walkthrough of the Vault in 2020](https://vimeo.com/456735890)
 
 ## Storefronts
 
-As the manager of serveral Storefronts team, our main focus was on performance.
+After several years with the Vault Tools team, I searched for an opportunity that would challenge me and put me in the critical path of Shopify's core business. I ended up managing the Storefront Foundations and Storefront API teams. The goals across these two teams were to ensure that Shopify's Storefronts were performant, reliable, scalable, and reached feature-parity with the Online Store (storefronts powered by Liquid templates) where possible.
+
+### Storefront API & SDKs
+
+The Storefront API team was responsible for the public API that powers  Storefronts, which in 2022 was a critical area of focus as Shopify launched it's own React-based framework for commerce called [Hydrogen](https://hydrogen.shopify.dev/) to cater to merchants wanting to build a headless storefront.
+
+The team also maintained the SDKs for the Storefront API, which were used by Shopify's partners and developers to build custom storefronts, including mobile apps, for merchants.
+
+This team had a tricky balance to strike. We wanted to encourage other teams to ensure that part of their product roadmap included adding any new features to the API, while also acting as stewards of the API, ensuring that it remained coherent, easy-to-use, and extensible. The history of Shopify was completely Online Store-centric, so there was a lot of work to do to ensure that the Storefront API was a first-class citizen.
+
+### Storefront Foundations
+
+The Storefront Foundations team was responsible for the core rendering of  Storefronts, which are the public-facing websites of Shopify merchants. This team had created and was stewarding Storefront Renderer (SFR), a custom Ruby app responsible for preformantly rendering storefronts at planetary scale (you can read more about the motivation and technical architecture of Storefront Renderer [here](https://shopify.engineering/how-shopify-reduced-storefront-response-times-rewrite) and [here](https://shopify.engineering/simplify-batch-cache-optimized-server-side-storefront-rendering)).
+
+There were three main projects we undertook while I was managing the team: porting the Storefront API to run on SFR, improving the performance of SFR through an initiative called Planetary Storefronts, and ensuring that SFR was resilient to failure, particularly for Black Friday/Cyber Monday (BFCM), the biggest weekend of the year for Shopify merchants.
+
+### Results
+
+- [Improved storefront performance globally](https://www.shopify.com/partners/blog/storefront-renderer)
+- [3x Storefront API performance after porting to SFR](https://www.shopify.com/news/performance%F0%9F%91%86-complexity%F0%9F%91%87-killer-updates-from-shopify-engineering)
+- Highly resilient systems with no incidents during BFCM 2022 or 2023
+- An ongoing initiative to build team-wide confidence and improve onboarding for team members on the SFR on-call rotation, through presentations and table top excercises.
 
 ## Carts
 
-I assembled the Carts team to evolve the Cart Platform at Shopify.
+While managing the Storefront API team, there was a focus on supporting enterprise merchants and custom storefronts. One of the main areas of the Storefront API that was most critical but least developed was the Cart API.
+
+Carts had "just worked" for the Online Store for a long time, and the API had been quickly and pragmatically built in 2021 to get a baseline feature set out the door. However, it was clear that the Cart API was not going to be able to support the needs of the enterprise merchants and custom storefronts that were coming to Shopify.
+
+There were two main issues to contend with: no current employees actually knew how the Cart functionality worked end-to-end, and the Cart API implementation was completely separate from the Online Store's Cart implementation, which was a huge problem for merchants who wanted to use both the Online Store and a custom storefront.
+
+To address these issues and provide a solid direction for the future of Carts, I assembled a Carts team to evolve the Cart Platform at Shopify. The team was focused on three critical areas:
+
+- Archeology to understand the current state of the Cart Platform
+- Evolving the Cart Platform to be more extensible and maintainable
+- Devising a novel system to read (and eventually write) Carts at the network edge, making them both faster and more resilient
+
+This team quickly grew to 11 engineers, mostly senior and staff level. By September 2023, we had unified the Cart Platform across the API and Online Store for 75% of Shopify merchants, unlocking new capabilities for merchants and developers, and providing a solid foundation for future work.
+
+[Carts in Shopify Editions Winter 2023](https://www.shopify.com/editions/winter2023#globally-deployed-shopify-cart)

@@ -3,12 +3,76 @@ content_type_order: 3
 meta:
   title: MUBI
   description: MUBI is a streaming service focused on critically-acclaimed, festival, and auteur-driven film.
+  banner:
+    src: https://cdn.fightingtheboss.com/work/mubi/mubi-logo-black.svg
+    alt: MUBI logo
+    logo: true
   tenure:
     startYear: 2009
     endYear: 2012
     startDate: Oct 2009
     endDate: Aug 2012
   location: London, UK
+  url: https://mubi.com
 ---
 
-I started working as a contractor for MUBI, which was originally known as The Auteurs. After successfully pitching a design for porting the web app to the PlayStation 3, we joined full-time and moved with the HQ to London, UK.
+import ImageGallery from "~/components/ImageGallery/ImageGallery.tsx";
+
+After launching [TIFFR](/work/tiffr) for the 2009 Toronto International Film Festival, we were contacted by Efe Cakarel, the founder of MUBI (originally known as The Auteurs), to work with them on their relatively-new streaming service. We were already fans of the service, so we were excited to work together and learn from their team (as we were still new to Rails at that point).
+
+That kicked-off several years of adventures, starting in Palo Alto then moving to London, during which I played a pivotal role in designing and building a lot of the foundational tech for MUBI, including the PlayStation 3 and Bravia apps, redesigning [Notebook](https://mubi.com/notebook), and pivoting to the new business model of the 30-day window for each film (which is still in place today).
+
+Thanks to this experience, I was able to learn a lot about the film industry, attend many international film festivals (including walking the red carpet at Cannes!), and meet several of my film heroes, including [Agnès Varda](https://www.imdb.com/name/nm0889513/) and [Hengameh Panahi](https://www.imdb.com/name/nm0659069/).
+
+## Notable Projects
+
+### Sony PlayStation 3
+
+Working directly with Sony Computer Entertainment Europe (SCEE), created a PS3 experience for the MUBI service, available in 18 countries and 7 languages across Europe and Asia Pacific.
+
+<ImageGallery images={[
+  { src: "https://cdn.fightingtheboss.com/projects/mubi-sony-ps3/landing.jpg", alt: "Landing view"},
+  { src: "https://cdn.fightingtheboss.com/projects/mubi-sony-ps3/film_page.jpg", alt: "Film detail (concept)"},
+  { src: "https://cdn.fightingtheboss.com/projects/mubi-sony-ps3/director_wall.jpg", alt: "Director Wall"},
+  { src: "https://fightingtheboss.com/projects/mubi-sony-ps3/director_detail.jpg", alt: "Director Detail"},
+  { src: "https://cdn.fightingtheboss.com/projects/mubi-sony-ps3/user_wall.jpg", alt: "User Wall"},
+  { src: "https://cdn.fightingtheboss.com/projects/mubi-sony-ps3/user_detail.jpg", alt: "User Detail" }
+]} />
+
+Work included creating the overall concept of the app, producing wireframes of all interactions, providing direction to the creative and development teams, plus coding, testing and documenting API calls between MUBI and PS3 clients.
+
+The launch of the PS3 app was a pivotal moment for MUBI. The user base grew by 11x in the first year after launch (an increase of 3M users), and the app was featured in the PS3 store, leading to a significant increase in the number of subscribers.
+
+### The "New" MUBI
+
+The "New" MUBI was a country-specific app that focused on [providing a new viewable film every day](https://www.nytimes.com/2017/01/19/movies/mubi-a-streaming-service-with-a-ticking-clock.html) at a low price. I conceived of and executed a single-page Backbone.js app for the new MUBI VOD-focused offering, including all design, interaction, client-side code and server-side API.
+
+<ImageGallery images={[
+  { src: "https://cdn.fightingtheboss.com/projects/the-new-mubi/mp_001_landing.jpg", alt: "Landing view"},
+  { src: "https://cdn.fightingtheboss.com/projects/the-new-mubi/mp_002_lavventura.jpg", alt: "Film view (with promo badges)"},
+  { src: "https://cdn.fightingtheboss.com/projects/the-new-mubi/mp_003_loveintheafternoon.jpg", alt: "Film View (unauthenticated)"},
+  { src: "https://cdn.fightingtheboss.com/projects/the-new-mubi/mp_004_drawer.jpg", alt: "All films"},
+  { src: "https://cdn.fightingtheboss.com/projects/the-new-mubi/mp_006_referralmanagement.jpg", alt: "Referral management"},
+  { src: "https://cdn.fightingtheboss.com/projects/the-new-mubi/mp_007_referral.jpg", alt: "Referral Landing" }
+]} />
+
+The app was touch- and keyboard-enabled and featured a responsive layout. Relied on Mustache templates shared between the client and server for localization and maintainability. Optimized image sizes via ImageMagick to reduce file sizes by 70% on average to allow for full-screen images while maintaining reasonable page weights.
+
+### Sony Bravia TVs
+
+![Sony Bravia](https://cdn.fightingtheboss.com/projects/mubi-sony-bravia/Bravia_20110615_0004.jpg)
+
+Collaborated closely with the BRAVIA team to provide MUBI content via the Sony BRAVIA content delivery system. Work included establishing the workflows for associating devices with the service, creating an API for integration with the Sony Trebuchet system, and design and interaction for all BRAVIA-related views on MUBI.
+
+### Notebook redesign
+
+We made several prototype designs for the Notebook, MUBI's film journal, and eventually settled on a design that was a mix of a blog and a magazine. The design was responsive and touch-enabled, and featured a custom CMS for the editorial team to manage the content.
+
+<ImageGallery images={[
+  { src: "https://cdn.fightingtheboss.com/projects/notebook/notebook_new_design_home.jpg", alt: "Home page" },
+  { src: "https://cdn.fightingtheboss.com/projects/notebook/notebook_new_design_about.jpg", alt: "About Notebook"},
+  { src: "https://cdn.fightingtheboss.com/projects/notebook/notebook_new_design_archives.jpg", alt: "Archives"},
+  { src: "https://cdn.fightingtheboss.com/projects/notebook/notebook_new_design_archive_author.jpg", alt: "Author archives"},
+  { src: "https://cdn.fightingtheboss.com/projects/notebook/notebook_new_design_article.jpg", alt: "Article view"},
+  { src: "https://cdn.fightingtheboss.com/projects/notebook/notebook_new_design_article_002.jpg", alt: "Article view"}
+]} />
