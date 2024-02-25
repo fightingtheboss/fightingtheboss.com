@@ -71,7 +71,7 @@ export default function Index() {
           <li className="py-2 pl-4">
             <Link
               to={
-                "https://fightingtheboss.com/pdf/mina_mikhail_resume_2024.pdf"
+                "https://cdn.fightingtheboss.com/pdf/mina_mikhail_resume_2024.pdf"
               }
               title="Resume / CV"
             >
